@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Algorithms</string>
+    <string name="text">Text :</string>
+    <string name="key">Key :</string>
+    <string name="ciper_text">Cipher Text :</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="swap">Swap</string>
+    <string name="stop">Clear</string>
+</resources>

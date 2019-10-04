@@ -95,7 +95,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clearClicked"
+        android:layout_marginBottom="10dp"
         android:text="@string/stop" />
+
+    <Button
+        android:id="@+id/btn_source_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sourceCodeClicked"
+        android:text="@string/source" />
 
 
 </LinearLayout>

@@ -2,6 +2,8 @@ package com.testing.securityalgorithms.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +14,7 @@ import android.widget.Spinner;
 import com.testing.securityalgorithms.R;
 import com.testing.securityalgorithms.algorithms.Algorithms;
 import com.testing.securityalgorithms.algorithms.RC4;
+import com.testing.securityalgorithms.algorithms.Vigenere;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,9 +83,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         keyText.setText("");
     }
 
+    public void sourceCodeClicked(View v){
+        Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
     public List<Algorithms> getListItem(){
         ArrayList<Algorithms> listItem = new ArrayList<>();
         listItem.add(new RC4(this));
+        listItem.add(new Vigenere(this));
         return listItem;
     }
 

@@ -3,11 +3,12 @@ package com.testing.securityalgorithms.algorithms;
 import android.content.Context;
 
 @SuppressWarnings("SpellCheckingInspection")
-public class Vigenere extends Algorithms {
+public class Vigenere26Char extends Algorithms {
 
     private static short[] charset;
     private short[] keySet;
     private static int MAX_CHARSET_LENGTH = 26;
+    private boolean isValid;
 
     static{
         charset = new short[MAX_CHARSET_LENGTH];
@@ -18,7 +19,7 @@ public class Vigenere extends Algorithms {
     }
 
     @SuppressWarnings("SpellCheckingInspection")
-    public Vigenere(Context context) {
+    public Vigenere26Char(Context context) {
         super(context);
     }
 
@@ -27,7 +28,7 @@ public class Vigenere extends Algorithms {
         String upperCaseString = input.toUpperCase();
         char[] textChar = new char[upperCaseString.length()];
 
-        if(keySet == null || keySet.length == 0){
+        if(keySet == null || keySet.length == 0 || !isAllAlphabet(input) || !isValid){
             return "";
         }
 
@@ -50,7 +51,7 @@ public class Vigenere extends Algorithms {
         String upperCaseString = input.toUpperCase();
         char[] textChar = new char[upperCaseString.length()];
 
-        if(keySet == null || keySet.length == 0){
+        if(keySet == null || keySet.length == 0 || !isAllAlphabet(input) || !isValid){
             return "";
         }
 
@@ -70,16 +71,30 @@ public class Vigenere extends Algorithms {
 
     @Override
     public void initKey(String key) {
-        String ignorCase = key.toUpperCase().trim();
-        keySet = new short[key.length()];
+        isValid = isAllAlphabet(key);
 
-        for(int i = 0 ; i < ignorCase.length(); i ++){
-            keySet[i] = (short) (ignorCase.charAt(i) - 'A');
+        if(isValid){
+            String ignorCase = key.toUpperCase().trim();
+            keySet = new short[key.length()];
+
+            for(int i = 0 ; i < ignorCase.length(); i ++){
+                keySet[i] = (short) (ignorCase.charAt(i) - 'A');
+            }
         }
+    }
+
+    private boolean isAllAlphabet(String text){
+        for(int i = 0 ; i < text.length(); i ++){
+            if(!Character.isAlphabetic(text.charAt(i))){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Vigenere";
+        return "Vigenere 26 Char";
     }
 }

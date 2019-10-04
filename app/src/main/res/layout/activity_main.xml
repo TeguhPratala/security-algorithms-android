@@ -1,109 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
     tools:context=".views.MainActivity">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/spinner"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:paddingLeft="8dp"
+       android:paddingRight="8dp"
+       android:paddingBottom="30dp">
+
+       <Spinner
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:id="@+id/spinner"/>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/text" />
+           <TextView
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:text="@string/text" />
 
-        <EditText
-            android:id="@+id/et_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+           <EditText
+               android:id="@+id/et_text"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/key" />
+           <TextView
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:text="@string/key" />
 
-        <EditText
-            android:id="@+id/et_key"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+           <EditText
+               android:id="@+id/et_key"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/ciper_text" />
+           <TextView
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:text="@string/ciper_text" />
 
-        <EditText
-            android:id="@+id/et_ciper_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+           <EditText
+               android:id="@+id/et_ciper_text"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_encrypt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="encryptClicked"
-        android:text="@string/encrypt" />
+       <Button
+           android:id="@+id/btn_encrypt"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:onClick="encryptClicked"
+           android:text="@string/encrypt" />
 
-    <Button
-        android:id="@+id/btn_decrypt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="decryptClicked"
-        android:text="@string/decrypt" />
+       <Button
+           android:id="@+id/btn_decrypt"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:onClick="decryptClicked"
+           android:text="@string/decrypt" />
 
-    <Button
-        android:id="@+id/btn_swap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="swapClicked"
-        android:text="@string/swap" />
+       <Button
+           android:id="@+id/btn_swap"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:onClick="swapClicked"
+           android:text="@string/swap" />
 
-    <Button
-        android:id="@+id/btn_clear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clearClicked"
-        android:layout_marginBottom="10dp"
-        android:text="@string/stop" />
+       <Button
+           android:id="@+id/btn_clear"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="clearClicked"
+           android:layout_marginBottom="10dp"
+           android:text="@string/stop" />
 
-    <Button
-        android:id="@+id/btn_source_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="sourceCodeClicked"
-        android:text="@string/source" />
+       <Button
+           android:id="@+id/btn_source_code"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:onClick="sourceCodeClicked"
+           android:text="@string/source" />
+   </LinearLayout>
 
 
-</LinearLayout>
+</ScrollView>

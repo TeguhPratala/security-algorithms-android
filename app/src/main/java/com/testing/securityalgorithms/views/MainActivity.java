@@ -14,7 +14,8 @@ import android.widget.Spinner;
 import com.testing.securityalgorithms.R;
 import com.testing.securityalgorithms.algorithms.Algorithms;
 import com.testing.securityalgorithms.algorithms.RC4;
-import com.testing.securityalgorithms.algorithms.Vigenere;
+import com.testing.securityalgorithms.algorithms.Vigenere26Char;
+import com.testing.securityalgorithms.algorithms.Vigenere256Char;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void sourceCodeClicked(View v){
-        Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+        Uri uri = Uri.parse("https://github.com/TeguhPratala/security-algorithms-android.git");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public List<Algorithms> getListItem(){
         ArrayList<Algorithms> listItem = new ArrayList<>();
         listItem.add(new RC4(this));
-        listItem.add(new Vigenere(this));
+        listItem.add(new Vigenere26Char(this));
+        listItem.add(new Vigenere256Char(this));
         return listItem;
     }
 
@@ -105,4 +107,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }
